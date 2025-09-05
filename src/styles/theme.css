@@ -1,0 +1,59 @@
+:root {
+    --bg: #ffffff;
+    --fg: #111111;
+    --card: #f8fafc;
+    --border: #e5e7eb;
+    --btn: #2563eb;
+    --btn-fg: #ffffff;
+  }
+  
+  /* Override variables when theme is dark/light on any element */
+  .theme-dark {
+    --bg: #0b1220;
+    --fg: #e5e7eb;
+    --card: #111827;
+    --border: #334155;
+    --btn: #3b82f6;
+    --btn-fg: #0b1220;
+  }
+  .theme-light {
+    --bg: #ffffff;
+    --fg: #111111;
+    --card: #f8fafc;
+    --border: #e5e7eb;
+    --btn: #2563eb;
+    --btn-fg: #ffffff;
+  }
+
+  /* Ensure scoped theme containers also set text color */
+  .theme-dark, .theme-light { color: var(--fg); }
+  
+  /* Base layout */
+  html, body, #root { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+  }
+  
+  .container { padding: 16px; }
+  .grid { display: grid; gap: 16px; max-width: 640px; }
+  
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px;
+  }
+  
+  button {
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    background: var(--btn);
+    color: var(--btn-fg);
+    border-radius: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+  button:active { transform: translateY(1px); }  
