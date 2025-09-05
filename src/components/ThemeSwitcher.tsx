@@ -1,12 +1,15 @@
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { toggleTheme } from '../features/theme/themeSlice';
-import { useThemeContext } from '../context/ThemeContext';
+import { useThemeContext } from '../context/useThemeContext';
 
 export default function ThemeSwitcher() {
   const reduxMode = useAppSelector(s => s.theme.mode);
   const dispatch = useAppDispatch();
 
   const { mode: ctxMode, toggle: ctxToggle } = useThemeContext();
+
+  console.log('Redux theme block render');
+  console.log('Context theme block render');
 
   return (
     <div className="grid">
